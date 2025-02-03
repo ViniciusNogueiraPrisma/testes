@@ -200,35 +200,35 @@ input#BTLgpd_Evolua_Priv {
 
 //effect
 
-.slide:hover,
-.slide:focus {
-  box-shadow: inset 25em 0 0 0 var(--color);
-}
+// .slide:hover,
+// .slide:focus {
+//   box-shadow: inset 25em 0 0 0 var(--color);
+// }
 
-.offset {
-  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+// .offset {
+//   box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
 
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 0 0 var(--color), inset 6em 3.5em 0 0 var(--color);
-  }
-}
-$colors: (
-  slide: #46B261,
-);
+//   &:hover,
+//   &:focus {
+//     box-shadow: 0 0 0 0 var(--color), inset 6em 3.5em 0 0 var(--color);
+//   }
+// }
+// $colors: (
+//   slide: #46B261,
+// );
 
-@each $button, $color in $colors {
-  .#{$button} {
-    --color: #{$color};
-    --hover: #{adjust-hue($color, 45deg)};
-  }
-}
+// @each $button, $color in $colors {
+//   .#{$button} {
+//     --color: #{$color};
+//     --hover: #{adjust-hue($color, 45deg)};
+//   }
+// }
 
-.slide {
-  transition: 0.7s;
-  text-decoration: none;
+// .slide {
+//   transition: 0.7s;
+//   text-decoration: none;
 
-  &:hover,
-  &:focus {
-  }
-}
+//   &:hover,
+//   &:focus {
+//   }
+// }

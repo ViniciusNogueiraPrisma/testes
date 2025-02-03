@@ -15,56 +15,117 @@ $(".titulosCentral").each(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const isMobile = () => window.innerWidth < 992;
-  const dropdowns = document.querySelectorAll(".nav-item.dropdown");
+  const accordionItems = document.querySelectorAll(".mobile-accordion-item");
 
-  dropdowns.forEach((dropdown) => {
-    const toggle = dropdown.querySelector(".dropdown-toggle");
-    const menu = dropdown.querySelector(".dropdown-menu");
+  function closeAccordionItem(button, content) {
+    button.setAttribute("aria-expanded", "false");
+    content.style.height = `${content.scrollHeight}px`;
 
-    toggle.addEventListener("click", function (e) {
-      if (isMobile()) {
-        e.preventDefault();
+    requestAnimationFrame(() => {
+      content.style.height = "0px";
+      content.classList.remove("show");
+    });
+  }
 
-        dropdowns.forEach((otherDropdown) => {
-          if (otherDropdown !== dropdown) {
-            otherDropdown
-              .querySelector(".dropdown-menu")
-              .classList.remove("show");
-            otherDropdown
-              .querySelector(".dropdown-toggle")
-              .setAttribute("aria-expanded", "false");
-          }
-        });
+  function openAccordionItem(button, content) {
+    content.classList.add("show");
+    button.setAttribute("aria-expanded", "true");
+    content.style.height = `${content.scrollHeight}px`;
+  }
 
-        menu.classList.toggle("show");
-        const isExpanded = menu.classList.contains("show");
-        this.setAttribute("aria-expanded", isExpanded);
+  function handleAccordionClick(e, item) {
+    if (!isMobile()) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    const button = item.querySelector(".mobile-accordion-button");
+    const content = item.querySelector(".mobile-accordion-content");
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+    // Fecha outros itens
+    accordionItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        const otherButton = otherItem.querySelector(".mobile-accordion-button");
+        const otherContent = otherItem.querySelector(
+          ".mobile-accordion-content"
+        );
+        if (otherButton.getAttribute("aria-expanded") === "true") {
+          closeAccordionItem(otherButton, otherContent);
+        }
       }
     });
-  });
 
-  document.addEventListener("click", function (e) {
-    if (isMobile() && !e.target.closest(".nav-item.dropdown")) {
-      dropdowns.forEach((dropdown) => {
-        dropdown.querySelector(".dropdown-menu").classList.remove("show");
-        dropdown
-          .querySelector(".dropdown-toggle")
-          .setAttribute("aria-expanded", "false");
-      });
+    // Toggle do item atual
+    if (isExpanded) {
+      closeAccordionItem(button, content);
+    } else {
+      openAccordionItem(button, content);
     }
-  });
+  }
 
-  window.addEventListener("resize", function () {
-    if (!isMobile()) {
-      dropdowns.forEach((dropdown) => {
-        dropdown.querySelector(".dropdown-menu").classList.remove("show");
-        dropdown
-          .querySelector(".dropdown-toggle")
-          .setAttribute("aria-expanded", "false");
-      });
-    }
+  function setupMobileAccordion() {
+    accordionItems.forEach((item) => {
+      const button = item.querySelector(".mobile-accordion-button");
+
+      // Remove o comportamento padrão do dropdown no mobile
+      if (isMobile()) {
+        button.removeAttribute("data-bs-toggle");
+      } else {
+        button.setAttribute("data-bs-toggle", "dropdown");
+      }
+
+      // Remove listeners antigos
+      const newButton = button.cloneNode(true);
+      button.parentNode.replaceChild(newButton, button);
+
+      // Adiciona novo listener
+      newButton.addEventListener("click", (e) => handleAccordionClick(e, item));
+    });
+  }
+
+  // Setup inicial
+  setupMobileAccordion();
+
+  // Atualiza no resize com debounce
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setupMobileAccordion, 250);
   });
 });
+
+const firstElements = document.querySelectorAll("[data-anima]");
+if (firstElements) {
+  firstElements.forEach((item) => {
+    let delay = item.getAttribute("data-anima-delay");
+    setTimeout(
+      () => {
+        item.classList.add("active");
+      },
+      delay ? 500 + +delay : 500
+    );
+  });
+}
+
+const myCarousel = document.getElementById("BannerCarrousel");
+if (myCarousel) {
+  myCarousel.addEventListener("slide.bs.carousel", (event) => {
+    document
+      .querySelectorAll("[data-anima]")
+      .forEach((e) => e.classList.remove("active"));
+    const elements = event.relatedTarget.querySelectorAll("[data-anima]");
+    elements.forEach((item) => {
+      let delay = item.getAttribute("data-anima-delay");
+      setTimeout(
+        () => {
+          item.classList.add("active");
+        },
+        delay ? 500 + +delay : 500
+      );
+    });
+  });
+}
 
 // opens and closes the search box.
 $(".open-searchbox, .close-searchbox").click(function () {
