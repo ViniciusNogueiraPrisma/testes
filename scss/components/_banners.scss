@@ -39,15 +39,22 @@ img.openImgZoom {
       }
 
       img {
-        // height: 680px;
-        height: 88vh;
+        height: 680px;
+
+        @media (max-width: 1359px) {
+          height: 550px;
+        }
+
         object-fit: cover;
       }
 
       .content-banner {
         position: absolute;
-        // height: 680px;
-        height: 88vh;
+        height: 680px;
+
+        @media (max-width: 1359px) {
+          height: 550px;
+        }
 
         top: 0;
 
