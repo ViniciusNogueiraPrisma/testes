@@ -10105,6 +10105,10 @@ table {
     font-weight: 400;
     line-height: 116%;
     color: var(--text-color-principal);
+
+    @media (max-width: 1359px) {
+      font-size: 0;
+    }
   }
 
   @media (max-width: 1200px) {
