@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const content = item.querySelector(".mobile-accordion-content");
     const isExpanded = button.getAttribute("aria-expanded") === "true";
 
-    // Fecha outros itens
     accordionItems.forEach((otherItem) => {
       if (otherItem !== item) {
         const otherButton = otherItem.querySelector(".mobile-accordion-button");
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Toggle do item atual
     if (isExpanded) {
       closeAccordionItem(button, content);
     } else {
@@ -68,26 +66,21 @@ document.addEventListener("DOMContentLoaded", function () {
     accordionItems.forEach((item) => {
       const button = item.querySelector(".mobile-accordion-button");
 
-      // Remove o comportamento padrão do dropdown no mobile
       if (isMobile()) {
         button.removeAttribute("data-bs-toggle");
       } else {
         button.setAttribute("data-bs-toggle", "dropdown");
       }
 
-      // Remove listeners antigos
       const newButton = button.cloneNode(true);
       button.parentNode.replaceChild(newButton, button);
 
-      // Adiciona novo listener
       newButton.addEventListener("click", (e) => handleAccordionClick(e, item));
     });
   }
 
-  // Setup inicial
   setupMobileAccordion();
 
-  // Atualiza no resize com debounce
   let resizeTimer;
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
@@ -103,7 +96,7 @@ if (firstElements) {
       () => {
         item.classList.add("active");
       },
-      delay ? 500 + + delay : 500
+      delay ? 500 + +delay : 500
     );
   });
 }
@@ -121,7 +114,7 @@ if (myCarousel) {
         () => {
           item.classList.add("active");
         },
-        delay ? 500 + + delay : 500
+        delay ? 500 + +delay : 500
       );
     });
   });
