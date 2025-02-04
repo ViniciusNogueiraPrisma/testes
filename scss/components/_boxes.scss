@@ -1,12 +1,6 @@
 .acessibillity-bar {
-
-  display: none;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  // background-color: #fafafa;
-  background-color: var(--pure-white);
-
-  // background-color: #fafafa;
+  padding: 6px 0px;
+  background-color: #1d1d1d;
   transition: 0.3s;
 
   @media (max-width: 991.98px) {
@@ -20,8 +14,7 @@
 
   .content {
     display: flex;
-    // justify-content: space-between;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 15px;
     align-items: flex-end;
 
@@ -31,13 +24,10 @@
       margin-right: 112px;
 
       p {
-        // color: var(--text-grey-scale-03);
-        color: black;
+        color: #fff;
         font-size: rem(12);
-        // font-size: 12px;
         display: flex;
         align-items: center;
-        // font-weight: 700;
         letter-spacing: 0.5px;
 
         &::after {
@@ -51,7 +41,7 @@
         }
 
         &::before {
-          color: #333333;
+          color: #fff;
           content: "";
           font-family: var(--font-icomoon-icon);
           margin-right: 4px;
@@ -59,16 +49,12 @@
       }
 
       a {
-        // color: var(--text-grey-scale-03);
-        color: #999999;
-        // font-weight: 700;
+        color: #fff;
         text-decoration: none;
         letter-spacing: 0.5px;
         font-size: rem(12);
-        // text-decoration: underline;
 
         &:hover {
-          // text-decoration: underline;
         }
       }
     }
@@ -97,13 +83,12 @@
           color: var(--text-grey-scale-03);
 
           small {
-            // color: #1d1d1d;
             font-size: 12px;
-            // font-family: 'Roboto';
             font-family: var(--font-sans) !important;
             font-weight: 400;
             line-height: 14.88px;
             word-wrap: break-word;
+            color: #fff;
           }
 
           &:hover {
@@ -133,7 +118,7 @@
             display: block;
 
             font-size: rem(16);
-            color: var(--text-grey-scale-03);
+            color: #fff;
           }
         }
       }
@@ -193,7 +178,6 @@
                 line-height: normal;
 
                 span {
-                  margin-right: 8px;
                 }
 
                 &:hover,

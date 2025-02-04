@@ -68,6 +68,119 @@
   </head>
 
   <body>
+    <div class="acessibillity-bar">
+      <div class="container container-responsivo-full">
+        <div class="content">
+          <div class="left-top-header">
+            <p>Relações com Investidores</p>
+            <a href="https://www.riweb.com.br/" target="_blank">
+              Site Institucional
+            </a>
+          </div>
+
+          <div class="right-top-header">
+            <div class="accessibility-tools">
+              <p id="usuLogado" style="display: none">
+                Olá,
+                <span>
+                  <span id="LtrNomeUsuario"></span>
+                </span>
+              </p>
+
+              <a href="./Acessibilidade">
+                <small> Acessibilidade </small>
+              </a>
+
+              <button
+                id="contrastToggle"
+                type="button"
+                class="tool"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Contraste"
+              >
+                <span class="icon-contraste"></span>
+              </button>
+
+              <button
+                id="increaseFont"
+                type="button"
+                class="tool"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Aumentar o tamanho da fonte"
+              >
+                <span class="icon-aumentar-fonte" accesskey="4"></span>
+              </button>
+
+              <button
+                id="decreaseFont"
+                type="button"
+                class="tool"
+                data-bs-toggle="tooltip"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Diminuir o tamanho da fonte"
+              >
+                <span class="icon-diminuir-fonte" accesskey="5"></span>
+              </button>
+            </div>
+
+            <div class="dropdown drop-idiomas">
+              <a
+                href="Master/#"
+                id="dropdownMenuLink"
+                class="dropdown-toggle trocaLinguagem"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                title="Mudar o idioma"
+                >PT</a
+              >
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuLink"
+                x-placement="bottom-start"
+                style="
+                  position: absolute;
+                  transform: translate3d(0px, 25px, 0px);
+                  top: 0px;
+                  left: 0px;
+                  will-change: transform;
+                "
+              >
+                <ul>
+                  <li>
+                    <a
+                      id="hlkCulturaPtBr"
+                      accesskey="7"
+                      class="dropdown-item"
+                      href="javascript:__doPostBack(&#39;ctl00$hlkCulturaPtBr&#39;,&#39;&#39;)"
+                    >
+                      <span>PT</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      id="hlkCulturaEnUS"
+                      accesskey="8"
+                      class="dropdown-item"
+                      href="javascript:__doPostBack(&#39;ctl00$hlkCulturaEnUS&#39;,&#39;&#39;)"
+                    >
+                      <span>EN</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="searchbox">
       <div class="container container-responsivo-full">
         <div class="row">
@@ -392,6 +505,255 @@
         </div>
       </div>
     </div>
+
+    <div class="content-test-main">
+      <div class="container container-responsivo-full">
+        <div class="content-test">
+          <div class="container container-responsivo-full">
+            <div class="row">
+              <!-- Card Principal -->
+              <div class="col-lg-6 mb-4">
+                <div class="card skeleton-card">
+                  <div class="skeleton-image"></div>
+                  <div class="card-body">
+                    <div class="skeleton-title"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cards Secundários -->
+              <div class="col-lg-6">
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+                    <div class="card skeleton-card-small">
+                      <div class="skeleton-image-small"></div>
+                      <div class="card-body">
+                        <div class="skeleton-title-small"></div>
+                        <div class="skeleton-text-small"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card skeleton-card-small">
+                      <div class="skeleton-image-small"></div>
+                      <div class="card-body">
+                        <div class="skeleton-title-small"></div>
+                        <div class="skeleton-text-small"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card skeleton-card-small">
+                      <div class="skeleton-image-small"></div>
+                      <div class="card-body">
+                        <div class="skeleton-title-small"></div>
+                        <div class="skeleton-text-small"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="card skeleton-card-small">
+                      <div class="skeleton-image-small"></div>
+                      <div class="card-body">
+                        <div class="skeleton-title-small"></div>
+                        <div class="skeleton-text-small"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container container-responsivo-full">
+        <div class="quotation">
+          <div class="swiper mySwiper-quotation">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="title-quotation">
+                  <h5>PRISM3:</h5>
+                </div>
+
+                <div class="infos-quotation">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="#118a1d"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v13m0-13 4 4m-4-4-4 4"
+                    />
+                  </svg>
+
+                  <p>R$ 14,47</p>
+                  <p>+0,50%</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="title-quotation">
+                  <h5>PRISM4:</h5>
+                </div>
+
+                <div class="infos-quotation">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="#118a1d"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6v13m0-13 4 4m-4-4-4 4"
+                    />
+                  </svg>
+
+                  <p>R$ 16,22</p>
+                  <p>+0,50%</p>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="title-quotation">
+                  <h5>PRISM5:</h5>
+                </div>
+
+                <div class="infos-quotation">
+                  <svg
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="#c62424"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 19V5m0 14-4-4m4 4 4-4"
+                    />
+                  </svg>
+
+                  <p>R$ 17,14</p>
+                  <p>+0,50%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-site">
+          <div class="div-btn-map-site">
+            <button
+              class="button-map-site active"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseMapSite"
+              aria-expanded="true"
+              aria-controls="collapseMapSite"
+            >
+              Mapa do site
+              <i class="icon-exibir"></i>
+            </button>
+          </div>
+
+          <div class="collapse show" id="collapseMapSite">
+            <div class="content-mapa">
+              <div class="canais">
+                <h5>A empresa</h5>
+
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+              </div>
+
+              <div class="canais">
+                <h5>Governança</h5>
+
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+              </div>
+
+              <div class="canais">
+                <h5>Informações aos Investidores</h5>
+
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+              </div>
+
+              <div class="canais">
+                <h5>Informações Financeiras</h5>
+
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+              </div>
+
+              <div class="canais">
+                <h5>Contato</h5>
+
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+                <a href="#" target="_blank">teste canais teste canais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="disclaimer">
+            <div class="direitos">
+              <p>Todos os direitos Reservados 2025</p>
+            </div>
+
+            <div class="policy">
+              <a href="#" target="_blank">Termos e condições</a>
+              <a href="#" target="_blank">Política de privacidade</a>
+              <a href="#" target="_blank">Notas legais</a>
+            </div>
+
+            <div class="logo-company">
+              <img src="images/logo-prisma.svg" alt="Logo empresa" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 

@@ -535,16 +535,15 @@
   transition: 0.4s;
   width: 100%;
   z-index: 999;
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 
 .menu-bar {
-  position: fixed !important;
+  position: sticky !important;
   background-color: #080b0e;
 
   &:hover {
-    background: var(--Navbar-Container-bg-on-scroll, #4c5766);
   }
 }
 

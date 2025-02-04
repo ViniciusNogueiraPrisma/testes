@@ -14,7 +14,7 @@ $(".titulosCentral").each(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const isMobile = () => window.innerWidth < 992;
+  const isMobile = () => window.innerWidth <= 1200;
   const accordionItems = document.querySelectorAll(".mobile-accordion-item");
 
   function closeAccordionItem(button, content) {
@@ -103,7 +103,7 @@ if (firstElements) {
       () => {
         item.classList.add("active");
       },
-      delay ? 500 + +delay : 500
+      delay ? 500 + + delay : 500
     );
   });
 }
@@ -121,7 +121,7 @@ if (myCarousel) {
         () => {
           item.classList.add("active");
         },
-        delay ? 500 + +delay : 500
+        delay ? 500 + + delay : 500
       );
     });
   });
